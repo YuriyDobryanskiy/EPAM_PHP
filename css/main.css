@@ -14,3 +14,6 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
     background-color: lightblue;
     padding: 10px;
 }
+form{
+	width:30%;
+}
