@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 18 2019 г., 06:14
+-- Время создания: Фев 18 2019 г., 06:20
 -- Версия сервера: 5.5.38-log
 -- Версия PHP: 5.3.28
 
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `student` (
   `university` mediumtext NOT NULL,
   `home` mediumtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=78 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=cp1251 AUTO_INCREMENT=79 ;
 
 --
 -- Дамп данных таблицы `student`
@@ -46,7 +46,7 @@ INSERT INTO `student` (`id`, `firstName`, `lastName`, `age`, `university`, `home
 (3, 'XXX', '', 30, 'Breslau', 'Poland'),
 (4, 'ффф', '', 43, 'Dijon', 'France'),
 (65, 'dxe111', '', 0, '', ''),
-(77, 'NAME2', '', 34, 'some', '');
+(78, 'zin', '', 26, 'some', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
