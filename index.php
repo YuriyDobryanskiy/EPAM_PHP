@@ -15,9 +15,9 @@ if( isset($_POST['submit']) || isset($_GET['delete'])){
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <?php
-        require_once ('conn.php');
-        include ('func.php');
-    ?>    
+        require_once ('lib/conn.php');
+        include ('lib/FirstClass.php');
+    ?>
   </head>
 
   <body>
@@ -28,23 +28,26 @@ if( isset($_POST['submit']) || isset($_GET['delete'])){
     <hr/>
 
     <?php
+
+    $sql = new lib\FirstClass();
+
       //select
-      selectList($link);      
+        $sql->selectList($link);
       //add      
-      if(isset($_POST['submit']) && ($_POST['id'] == '')){        
-        addStudent($link, $_POST['name'],$_POST['age'],$_POST['university']);
+      if(isset($_POST['submit']) && ($_POST['id'] == '')){
+        $sql->addStudent($link, $sql->HTML($_POST['name']),$_POST['age'],$sql->HTML($_POST['university']));
       }
       //delete
-      if(isset($_GET['delete'])){        
-        deleteStudent($link, $_GET['delete']);
+      if(isset($_GET['delete'])){
+        $sql->deleteStudent($link, $_GET['delete']);
       }
       //edit
       if(isset($_GET['edit'])){        
-        $row = editStudent($link, $_GET['edit']);
+        $row = $sql->editStudent($link, $_GET['edit']);
       }
       //save edited
-      if(isset($_GET['edit']) && ($_POST['id'] != '')){        
-        saveEditStudent($link, $_POST['id'], $_POST['name'],$_POST['age'],$_POST['university']);
+      if(isset($_GET['edit']) && ($_POST['id'] != '')){
+        $sql->saveEditStudent($link, $_POST['id'], $sql->HTML($_POST['name']),$_POST['age'],$sql->HTML($_POST['university']));
       }
 
       mysqli_close($link);    

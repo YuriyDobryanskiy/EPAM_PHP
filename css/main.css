@@ -17,3 +17,6 @@ fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
 form{
 	width:30%;
 }
+.row{
+	margin-right: 0!important;
+}
